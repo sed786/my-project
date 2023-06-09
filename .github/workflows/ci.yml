@@ -31,8 +31,9 @@ jobs:
     - name: Build and Push Docker Image
       #uses: mr-smithers-excellent/docker-build-push@v4
       run: docker build -t app .
-      with:
-        image: docker push sed786/cicdpub
+      run: docker push app sed786/cicdpub
+      #with:
+      #  image: docker push sed786/cicdpub
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
